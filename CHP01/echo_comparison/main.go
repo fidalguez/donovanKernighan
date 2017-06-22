@@ -20,7 +20,7 @@ func main() {
 }
 
 func echo1() {
-	//start := time.Now()
+	start := time.Now()
 	//duration := time.Second
 	//time.Sleep(duration)
 	var s, sep string
@@ -29,44 +29,44 @@ func echo1() {
 		sep = " "
 	}
 	fmt.Println(s)
-	//fmt.Printf("%.8f elapsed (echo1)\n\n", time.Since(start).Seconds())
+	fmt.Printf("%.8f elapsed (echo1)\n\n", time.Since(start).Seconds())
 }
 
 func echo2 () {
-	//start := time.Now()
+	start := time.Now()
 	//duration := time.Second
 	//time.Sleep(duration)
 	s, sep := "", ""
-	for _, arg := range os.Args[:] {
+	for _, arg := range os.Args[0:] {
 		s += sep + arg
 		sep = " "
 	}
 	fmt.Println(s)
-	//fmt.Printf("%.8f elapsed (echo2)\n\n", time.Since(start).Seconds())
+	fmt.Printf("%.8f elapsed (echo2)\n\n", time.Since(start).Seconds())
 }
 
 func echo3() {
-	//start := time.Now()
+	start := time.Now()
 	//duration := time.Second
 	//time.Sleep(duration)
-	fmt.Println(strings.Join(os.Args[0:]," "))
-	//fmt.Printf("%.8f elapsed (echo3)\n\n", time.Since(start).Seconds())
+	fmt.Println(strings.Join(os.Args[:]," "))
+	fmt.Printf("%.8f elapsed (echo3)\n\n", time.Since(start).Seconds())
 }
 
 func echoBonus() {
-	//start := time.Now()
+	start := time.Now()
 	//duration := time.Second
 	//time.Sleep(duration)
-	fmt.Println(os.Args[0:])
-	//fmt.Printf("%.8f elapsed (echoBonus)\n\n", time.Since(start).Seconds())
+	fmt.Println(os.Args)
+	fmt.Printf("%.8f elapsed (echoBonus)\n\n", time.Since(start).Seconds())
 }
 
 func echo4() {
-	//start := time.Now()
+	start := time.Now()
 	//duration := time.Second
 	//time.Sleep(duration)
-	for i, arg := range os.Args {
+	for i, arg := range os.Args[:] {
 		fmt.Printf("%d %s\n",i,arg)
 	}
-	//fmt.Printf("%.8f elapsed (echo4)\n\n", time.Since(start).Seconds())
+	fmt.Printf("%.8f elapsed (echo4)\n\n", time.Since(start).Seconds())
 }
