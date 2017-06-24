@@ -65,7 +65,7 @@ func echo4() {
 	start := time.Now()
 	//duration := time.Second
 	//time.Sleep(duration)
-	for i, arg := range os.Args[:] {
+	for i, arg := range os.Args[0:] {
 		fmt.Printf("%d %s\n",i,arg)
 	}
 	fmt.Printf("%.8f elapsed (echo4)\n\n", time.Since(start).Seconds())
